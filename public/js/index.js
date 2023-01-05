@@ -18,3 +18,14 @@ socket.emit('createMessage', {
 }, function (message){
   console.log(message, 'Got it.');
 });
+
+document.querySelector('#submit-btn').addEventListener('click', function(e) {
+  e.preventDefault();
+
+  socket.emit('createMessage', {
+    from: "User",
+    text: document.querySelector('input[name="message"]').value
+  }, function() {
+
+  })
+})
